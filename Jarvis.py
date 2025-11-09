@@ -9,6 +9,8 @@ import wikipedia
 import webbrowser
 import pywhatkit as kit
 import sys
+import time
+import pyjokes
 
 
 
@@ -43,15 +45,17 @@ def takecommand():
 
 #To wish
 def wish():
-  hour =int(datetime.datetime.now().hour)
+    hour = int(datetime.datetime.now().hour)
+    tt = time.strftime("%I:%M %p")
 
-  if hour >= 0 and hour <=12:
-    speak("Good Morning")
-  elif hour > 12 and hour < 18:
-    speak("Good Afternoon")
-  else:
-    speak("Good Evening")
-  speak("I am Jarvis sir, please tell me how can I help you")
+    if hour >= 0 and hour < 12:
+        speak(f"Good Morning, it's {tt}")
+    elif hour >= 12 and hour < 18:
+        speak(f"Good Afternoon, it's {tt}")
+    else:
+        speak(f"Good Evening, it's {tt}")
+    speak("I am Jarvis sir, please tell me how may I help you")
+ 
 
 if __name__ == "__main__":
   wish()
@@ -113,6 +117,10 @@ if __name__ == "__main__":
       speak("Sir, what should I search on google")
       cm = takecommand().lower()
       webbrowser.open(f"{cm}")
+
+    elif "tell me a joke" in query:
+      joke = pyjokes.get_joke()
+      speak(joke)
            
     elif "no thanks" in query:
       speak("thanks for using me sir, have a good day.")
