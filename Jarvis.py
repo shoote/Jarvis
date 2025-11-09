@@ -3,6 +3,10 @@ import speech_recognition as sr
 import datetime
 import os
 import cv2
+import random
+from requests import get
+import wikipedia
+import webbrowser
 
 
 
@@ -73,5 +77,39 @@ if __name__ == "__main__":
           break
       cap.release()
       cv2.destroyAllWindows()
+    
+    elif "play music" in query:
+      music_dir = "C:\\Users\\HP\\Music"
+      songs = os.listdir(music_dir)
+      #rd = random.choice(songs)
+      for song in songs:
+        if song.endswith('.mp3'):
+          os.startfile(os.path.join(music_dir,song))
+    
+    elif "ip address" in query:
+      ip = get('https://api.ipify.org').text
+      speak(f"Your IP address is {ip}")
 
+    elif "wikipedia" in query:
+      speak("Searching wikipedia...")
+      query = query.replace("wikipedia","")
+      results = wikipedia.summary(query,sentences = 2)
+      speak("According to wikipedia")
+      speak(results)
+      # print(results)
+
+    elif "open youtube" in query:
+      webbrowser.open("www.youtube.com")
+
+    elif "open github" in query:
+      webbrowser.open("https://github.com/")
+
+    elif "open linkedin" in query:
+      webbrowser.open("linkedin.com/in/harsh-gahlot-b84b85253")
+
+    elif "open google" in query:
+      speak("Sir, what should I search on google")
+      cm = takecommand().lower()
+      webbrowser.open(f"{cm}")
+    
     
