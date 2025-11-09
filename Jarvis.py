@@ -7,6 +7,8 @@ import random
 from requests import get
 import wikipedia
 import webbrowser
+import pywhatkit as kit
+import sys
 
 
 
@@ -53,8 +55,8 @@ def wish():
 
 if __name__ == "__main__":
   wish()
-  # while True:
-  if 1:
+  while True:
+  # if 1:
 
     query = takecommand().lower()
 
@@ -111,5 +113,10 @@ if __name__ == "__main__":
       speak("Sir, what should I search on google")
       cm = takecommand().lower()
       webbrowser.open(f"{cm}")
+           
+    elif "no thanks" in query:
+      speak("thanks for using me sir, have a good day.")
+      sys.exit()
     
+    speak("sir, do you have any other work")
     
