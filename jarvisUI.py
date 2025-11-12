@@ -51,12 +51,16 @@ class Ui_MainWindow(object):
         self.textBrowser = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser.setGeometry(QtCore.QRect(660, 50, 256, 41))
         self.textBrowser.setStyleSheet("background:transparent;\n"
-"border-radius:none;")
+"border-radius:none;\n" \
+"color:white;\n" \
+"font-size:20px;")
         self.textBrowser.setObjectName("textBrowser")
         self.textBrowser_2 = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser_2.setGeometry(QtCore.QRect(1080, 50, 256, 41))
         self.textBrowser_2.setStyleSheet("background:transparent;\n"
-"border-radius:none;")
+"border-radius:none;\n" \
+"color:white;\n" \
+"font-size:20px;")
         self.textBrowser_2.setObjectName("textBrowser_2")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
         self.label_3.setGeometry(QtCore.QRect(140, 480, 301, 291))

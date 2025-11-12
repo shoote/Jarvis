@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>JarvisUI</class>
+ <widget class="QMainWindow" name="JarvisUI">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="JarvisUI">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
       <x>0</x>
